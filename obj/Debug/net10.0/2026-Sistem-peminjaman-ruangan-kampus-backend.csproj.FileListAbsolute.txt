@@ -31,3 +31,4 @@ C:\PBL2026\2026-Sistem-peminjaman-ruangan-kampus-backend\obj\Debug\net10.0\refin
 C:\PBL2026\2026-Sistem-peminjaman-ruangan-kampus-backend\obj\Debug\net10.0\2026-Sistem-peminjaman-ruangan-kampus-backend.pdb
 C:\PBL2026\2026-Sistem-peminjaman-ruangan-kampus-backend\obj\Debug\net10.0\2026-Sistem-peminjaman-ruangan-kampus-backend.genruntimeconfig.cache
 C:\PBL2026\2026-Sistem-peminjaman-ruangan-kampus-backend\obj\Debug\net10.0\ref\2026-Sistem-peminjaman-ruangan-kampus-backend.dll
+C:\PBL2026\2026-Sistem-peminjaman-ruangan-kampus-backend\obj\Debug\net10.0\2026-Sistem-peminjaman-ruangan-kampus-backend.sourcelink.json
