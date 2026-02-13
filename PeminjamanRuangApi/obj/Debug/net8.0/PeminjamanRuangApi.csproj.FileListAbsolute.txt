@@ -105,3 +105,4 @@ C:\PBL2026\2026-Sistem-peminjaman-ruangan-kampus-backend\PeminjamanRuangApi\obj\
 C:\PBL2026\2026-Sistem-peminjaman-ruangan-kampus-backend\PeminjamanRuangApi\obj\Debug\net8.0\PeminjamanRuangApi.pdb
 C:\PBL2026\2026-Sistem-peminjaman-ruangan-kampus-backend\PeminjamanRuangApi\obj\Debug\net8.0\PeminjamanRuangApi.genruntimeconfig.cache
 C:\PBL2026\2026-Sistem-peminjaman-ruangan-kampus-backend\PeminjamanRuangApi\obj\Debug\net8.0\ref\PeminjamanRuangApi.dll
+C:\PBL2026\2026-Sistem-peminjaman-ruangan-kampus-backend\PeminjamanRuangApi\obj\Debug\net8.0\PeminjamanRuangApi.sourcelink.json

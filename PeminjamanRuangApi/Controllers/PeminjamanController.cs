@@ -22,29 +22,28 @@ namespace PeminjamanRuangApi.Controllers
             return await _context.Peminjamans.ToListAsync();
         }
 
-        // PERBAIKAN DI SINI: Pastikan penulisan [FromBody] Peminjaman data benar
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] Peminjaman data)
+        public async Task<IActionResult> Post([FromBody] Peminjaman data) 
         {
             _context.Peminjamans.Add(data);
             await _context.SaveChangesAsync();
             return Ok(data);
         }
 
-        // PERBAIKAN DI SINI: Samakan dengan struktur [FromBody] di atas
         [HttpPut("{id}")]
         public async Task<IActionResult> Put(int id, [FromBody] Peminjaman dataUpdate)
         {
             var dataLama = await _context.Peminjamans.FindAsync(id);
             if (dataLama == null) return NotFound();
-
+            
+            // Mengisi bagian update agar data benar-benar berubah di database
             dataLama.NamaPeminjam = dataUpdate.NamaPeminjam;
             dataLama.NamaRuangan = dataUpdate.NamaRuangan;
             dataLama.Tanggal = dataUpdate.Tanggal;
             dataLama.Status = dataUpdate.Status;
 
             await _context.SaveChangesAsync();
-            return Ok("Berhasil Update");
+            return Ok("Update Berhasil");
         }
 
         [HttpDelete("{id}")]
@@ -55,7 +54,7 @@ namespace PeminjamanRuangApi.Controllers
 
             _context.Peminjamans.Remove(data);
             await _context.SaveChangesAsync();
-            return Ok("Berhasil Hapus");
+            return Ok(new { message = "Data berhasil dihapus!" });
         }
     }
 }
