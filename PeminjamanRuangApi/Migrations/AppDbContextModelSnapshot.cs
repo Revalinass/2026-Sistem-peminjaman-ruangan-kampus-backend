@@ -31,9 +31,15 @@ namespace PeminjamanRuangApi.Migrations
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("NamaPeminjam")
+                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("NamaRuangan")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<DateTime>("Tanggal")
@@ -56,20 +62,46 @@ namespace PeminjamanRuangApi.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Lokasi")
-                        .HasMaxLength(100)
-                        .HasColumnType("varchar(100)");
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
                     b.Property<string>("NamaRuangan")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("varchar(100)");
-
-                    b.Property<bool>("Status")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("longtext");
 
                     b.HasKey("Id");
 
                     b.ToTable("Ruangs");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Kapasitas = 30,
+                            Lokasi = "Gedung D3",
+                            NamaRuangan = "Lab RPL"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Kapasitas = 30,
+                            Lokasi = "Gedung D4",
+                            NamaRuangan = "Lab Database"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Kapasitas = 100,
+                            Lokasi = "Gedung D3",
+                            NamaRuangan = "Teater PENS"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Kapasitas = 30,
+                            Lokasi = "Gedung D4",
+                            NamaRuangan = "Lab APD"
+                        });
                 });
 #pragma warning restore 612, 618
         }
