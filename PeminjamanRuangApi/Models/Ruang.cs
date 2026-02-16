@@ -7,14 +7,9 @@ namespace PeminjamanRuangApi.Models
         public int Id { get; set; }
 
         [Required]
-        [MaxLength(100)]
-        public string? NamaRuangan { get; set; }
+        public string NamaRuangan { get; set; } = string.Empty;
 
-        [Required]
         public int Kapasitas { get; set; }
-
-        [MaxLength(100)]
-        public string? Lokasi { get; set; }
-
+        public string Lokasi { get; set; } = string.Empty; 
     }
 }

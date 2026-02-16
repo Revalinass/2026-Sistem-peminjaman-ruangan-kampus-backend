@@ -23,11 +23,36 @@ namespace PeminjamanRuangApi.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post(Ruang ruang)
+        public async Task<IActionResult> Post([FromBody] Ruang ruang)
         {
             _context.Ruangs.Add(ruang);
             await _context.SaveChangesAsync();
             return Ok(ruang);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Put(int id, [FromBody] Ruang ruangUpdate)
+        {
+            var ruangLama = await _context.Ruangs.FindAsync(id);
+            if (ruangLama == null) return NotFound("Ruangan tidak ditemukan");
+
+            ruangLama.NamaRuangan = ruangUpdate.NamaRuangan;
+            ruangLama.Kapasitas = ruangUpdate.Kapasitas;
+            ruangLama.Lokasi = ruangUpdate.Lokasi; // Sesuai kolom database kamu
+
+            await _context.SaveChangesAsync();
+            return Ok("Data Ruangan Berhasil Diupdate");
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var ruang = await _context.Ruangs.FindAsync(id);
+            if (ruang == null) return NotFound();
+
+            _context.Ruangs.Remove(ruang);
+            await _context.SaveChangesAsync();
+            return Ok("Ruangan Berhasil Dihapus");
         }
     }
 }
